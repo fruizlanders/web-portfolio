@@ -1,0 +1,29 @@
+{
+  "profile": {
+    "imageAlt": "Profile picture of Franco Ruiz",
+    "name": "Franco Ruiz",
+    "role": "Systems Engineer | Cloud Specialist",
+    "summary": "Over 5 years of experience designing, building, and optimizing scalable and reliable cloud ecosystems.",
+    "email": "franco@example.com",
+    "location": "Lima, Peru"
+  },
+  "skills": {
+    "title": "Core Skills",
+    "languages": {
+      "title": "Languages",
+      "items": ["TypeScript", "Python", "Go"]
+    },
+    "backend": {
+      "title": "Backend & Data",
+      "items": ["Node.js", "PostgreSQL", "Redis"]
+    },
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "items": ["AWS", "Azure", "Kubernetes"]
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "I help companies design, modernize, and operate scalable cloud infrastructures using AWS, Azure, and modern platforms like Supabase. My work focuses on fast and reliable implementations, proactive incident prevention, cost optimization, and high operational resilience."
+  }
+}

@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================
+   BASE
+===================== */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+
+    @apply bg-neutral-950 text-neutral-100 antialiased;
+    font-feature-settings: "ss01", "cv01";
+}
+
+/* =====================
+   SELECTION
+===================== */
+
+::selection {
+    background: #38bdf8;
+    color: #020617;
+}
+
+/* =====================
+   HEADINGS
+===================== */
+
+h1,
+h2,
+h3,
+h4 {
+    @apply tracking-tight;
+}
+
+/* =====================
+   LINKS
+===================== */
+
+a {
+    @apply transition-colors duration-200;
+}
+
+a:hover {
+    @apply text-sky-400;
+}
+
+/* =====================
+   CONTAINERS
+===================== */
+
+.section {
+    @apply max-w-5xl mx-auto px-6 py-12;
+}
+
+/* =====================
+   GLASS / CARD
+===================== */
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+}
+
+/* =====================
+   GRADIENT TEXT
+===================== */
+
+.gradient-text {
+    background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =====================
+   DIVIDERS
+===================== */
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+}
