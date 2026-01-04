@@ -72,7 +72,8 @@ export default async function LocaleLayout({
           antialiased
           bg-neutral-950
           text-neutral-100
-          overflow-hidden
+          overflow-y-auto
+              md:overflow-hidden
         `}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
