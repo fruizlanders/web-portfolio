@@ -22,6 +22,7 @@ const ProfileSection = () => {
         <h1 className="text-4xl font-bold gradient-text">{t("name")}</h1>
 
         <h2 className="text-xl text-neutral-400">{t("role")}</h2>
+        <h3 className="text-xl text-neutral-400">{t("email")}</h3>
 
         <p className="max-w-xl mx-auto text-neutral-300 leading-relaxed">
           {t("summary")}

@@ -4,26 +4,30 @@
     "name": "Franco Ruiz",
     "role": "Ingeniero de Sistemas | Especialista en Cloud",
     "summary": "Más de 5 años diseñando, implementando y optimizando ecosistemas cloud escalables y confiables.",
-    "email": "franco@example.com",
+    "email": "fruizlanders@gmail.com",
     "location": "Lima, Perú"
   },
   "skills": {
     "title": "Habilidades Clave",
     "languages": {
-      "title": "Lenguajes",
-      "items": ["TypeScript", "Python", "Go"]
+      "title": "Desarrollo",
+      "items": [
+        "Web + Base de datos",
+        "Mobile (Android + iOS)",
+        "Automatizacion con IA"
+      ]
     },
     "backend": {
-      "title": "Backend & Datos",
-      "items": ["Node.js", "PostgreSQL", "Redis"]
+      "title": "Frameworks y Backend",
+      "items": ["React + Node", "Fly.io + Python", "Expo Go"]
     },
     "cloud": {
-      "title": "Cloud & DevOps",
-      "items": ["AWS", "Azure", "Kubernetes"]
+      "title": "Cloud y DevOps",
+      "items": ["AWS, Azure", "Kubernetes", "Supabase Edge Functions"]
     }
   },
   "experience": {
     "title": "Experiencia",
-    "description": "Acompaño a empresas en la creación, modernización y operación de infraestructuras cloud escalables utilizando AWS, Azure y plataformas modernas como Supabase. Mi enfoque combina implementaciones ágiles, prevención proactiva de incidentes, optimización de costos y alta confiabilidad operativa."
+    "description": "Acompaño a empresas en la creación, modernización y operación de infraestructuras cloud escalables utilizando AWS, Azure y plataformas modernas como Supabase. Mi enfoque combina implementaciones ágiles, prevención proactiva de incidentes y optimización de costos."
   }
 }
