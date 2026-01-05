@@ -1,29 +1,17 @@
-import ProfileSection from './components/ProfileSection';
-import SkillsSection from './components/SkillsSection';
-import ExperienceSection from './components/ExperienceSection';
+"use client";
+
+import { useState } from "react";
+import DesktopLayout from "./components/DesktopLayout";
+import MobileLayout from "./components/MobileLayout";
+import type { Section } from "./components/types";
 
 export default function MinimalistPortfolio() {
-	return (
-		<main className="min-h-screen md:h-screen flex flex-col bg-white dark:bg-gray-900 pb-16 sm:pb-0">
-			<div className="flex-1 grid grid-cols-1 md:grid-cols-5">
-				{/* Left Column - Profile */}
-				<div className="md:col-span-2 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 md:flex md:items-center">
-					<ProfileSection />
-				</div>
+  const [active, setActive] = useState<Section>("skills");
 
-				{/* Right Column - Skills and Experience */}
-				<div className="md:col-span-3 flex flex-col md:justify-center">
-					{/* Skills Section */}
-					<div className="">
-						<SkillsSection />
-					</div>
-
-					{/* Experience Section */}
-					<div>
-						<ExperienceSection />
-					</div>
-				</div>
-			</div>
-		</main>
-	);
+  return (
+    <main className="min-h-screen md:h-screen bg-neutral-950">
+      <DesktopLayout active={active} setActive={setActive} />
+      <MobileLayout />
+    </main>
+  );
 }

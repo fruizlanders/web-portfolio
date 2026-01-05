@@ -4,8 +4,14 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/i18n/config";
 import "../../globals.css";
-import LanguageToggle from "./components/LanguageToggle";
 
+import LanguageToggle from "./components/LanguageToggle";
+import { CVModalProvider } from "@/app/[locale]/components/useCVModal";
+import CVModal from "@/app/[locale]/components/CVModal";
+
+/* ============================
+   FONTS
+============================ */
 const geistSans = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
@@ -17,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 /* ============================
-   METADATA (params ASYNC)
+   METADATA
 ============================ */
 export async function generateMetadata({
   params,
@@ -30,23 +36,61 @@ export async function generateMetadata({
     ? (locale as Locale)
     : "es";
 
+  const isES = safeLocale === "es";
+
+  const title = isES
+    ? "Franco Ruiz | Ingeniero de Sistemas Cloud"
+    : "Franco Ruiz | Cloud Systems Engineer";
+
+  const description = isES
+    ? "Ingeniero de Sistemas con experiencia en arquitecturas cloud escalables, Azure, AWS y soluciones modernas."
+    : "Systems Engineer experienced in scalable cloud architectures, Azure, AWS, and modern platforms.";
+
+  const baseUrl = "https://francoruizlanders.site";
+
   return {
-    title:
-      safeLocale === "es"
-        ? "Franco Ruiz — Ingeniero de Sistemas Cloud"
-        : "Franco Ruiz — Cloud Systems Engineer",
-    description:
-      safeLocale === "es"
-        ? "Ingeniero de Sistemas especializado en infraestructuras cloud escalables."
-        : "Systems Engineer specialized in scalable cloud infrastructures.",
+    title,
+    description,
+
+    metadataBase: new URL(baseUrl),
+
+    alternates: {
+      canonical: "/",
+      languages: {
+        es: "/es",
+        en: "/en",
+      },
+    },
+
     openGraph: {
-      locale: safeLocale === "es" ? "es_ES" : "en_US",
+      title,
+      description,
+      url: baseUrl,
+      siteName: "Franco Ruiz",
+      locale: isES ? "es_ES" : "en_US",
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+      },
     },
   };
 }
 
 /* ============================
-   LAYOUT (params ASYNC)
+   LAYOUT
 ============================ */
 export default async function LocaleLayout({
   children,
@@ -72,23 +116,37 @@ export default async function LocaleLayout({
           antialiased
           bg-neutral-950
           text-neutral-100
+
           overflow-y-auto
-              md:overflow-hidden
+          md:overflow-hidden
         `}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {/* CONTENEDOR MAESTRO */}
-          <div className="grid grid-rows-[auto_1fr] h-screen">
-            {/* HEADER */}
-            <header className="flex justify-end p-4">
-              <LanguageToggle />
-            </header>
+          <CVModalProvider>
+            {/* CONTENEDOR RAÍZ */}
+            <div className="flex min-h-screen flex-col md:h-screen">
+              {/* HEADER */}
+              <header className="shrink-0 flex justify-end p-4">
+                <LanguageToggle />
+              </header>
 
-            {/* MAIN */}
-            <main className="flex items-center justify-center px-6">
-              {children}
-            </main>
-          </div>
+              {/* MAIN */}
+              <main
+                className="
+                  flex-1
+                  px-6
+                  md:flex
+                  md:items-center
+                  md:justify-center
+                "
+              >
+                {children}
+              </main>
+            </div>
+
+            {/* 🔥 MODAL (ESTO FALTABA) */}
+            <CVModal />
+          </CVModalProvider>
         </NextIntlClientProvider>
       </body>
     </html>

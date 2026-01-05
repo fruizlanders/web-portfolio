@@ -3,13 +3,21 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-const ProfileSection = () => {
+export default function ProfileSection({
+  compact = false,
+}: {
+  compact?: boolean;
+}) {
   const t = useTranslations("profile");
 
   return (
-    <section className="section">
-      <div className="glass p-10 text-center space-y-6">
-        <div className="relative w-36 h-36 mx-auto">
+    <section className={compact ? "" : "section"}>
+      <div
+        className={`glass text-center ${
+          compact ? "p-6 space-y-4" : "p-10 space-y-6"
+        }`}
+      >
+        <div className="relative w-28 h-28 mx-auto">
           <Image
             src="/portrait.jpg"
             alt={t("imageAlt")}
@@ -19,17 +27,16 @@ const ProfileSection = () => {
           />
         </div>
 
-        <h1 className="text-4xl font-bold gradient-text">{t("name")}</h1>
+        <h1 className="text-3xl font-bold gradient-text">{t("name")}</h1>
 
-        <h2 className="text-xl text-neutral-400">{t("role")}</h2>
-        <h3 className="text-xl text-neutral-400">{t("email")}</h3>
+        <h2 className="text-base text-neutral-400">{t("role")}</h2>
 
-        <p className="max-w-xl mx-auto text-neutral-300 leading-relaxed">
-          {t("summary")}
-        </p>
+        {!compact && (
+          <p className="max-w-xl mx-auto text-neutral-300 leading-relaxed">
+            {t("summary")}
+          </p>
+        )}
       </div>
     </section>
   );
-};
-
-export default ProfileSection;
+}

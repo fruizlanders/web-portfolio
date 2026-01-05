@@ -28,6 +28,32 @@
   },
   "experience": {
     "title": "Experiencia",
-    "description": "Acompaño a empresas en la creación, modernización y operación de infraestructuras cloud escalables utilizando AWS, Azure y plataformas modernas como Supabase. Mi enfoque combina implementaciones ágiles, prevención proactiva de incidentes y optimización de costos."
+    "description": "Más de 5 años diseñando, manteniendo y optimizando arquitecturas cloud escalables en sectores como Telecomunicaciones y Finanzas.",
+    "cta": "Ver CV"
+  },
+  "cv": {
+    "title": "Currículum",
+    "description": "Descarga mi CV con experiencia en cloud, sistemas y soluciones escalables.",
+    "download": "Descargar CV (PDF)"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "cloud": {
+      "title": "Arquitecturas Cloud Escalables",
+      "description": "Diseño e implementación de infraestructuras cloud seguras y escalables."
+    },
+    "saas": {
+      "title": "Plataforma SaaS Moderna",
+      "description": "Aplicación full-stack con autenticación, pagos y despliegue continuo."
+    },
+    "automation": {
+      "title": "Automatización & CI/CD",
+      "description": "Pipelines automatizados para testing, build y despliegue."
+    }
+  },
+  "navigation": {
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "projects": "Proyectos"
   }
 }
