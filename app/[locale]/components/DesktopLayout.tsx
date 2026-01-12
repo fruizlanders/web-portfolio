@@ -1,5 +1,4 @@
 "use client";
-
 import { useTranslations } from "next-intl";
 import ProfileSection from "./ProfileSection";
 import SkillsSection from "./SkillsSection";
@@ -15,7 +14,6 @@ export default function DesktopLayout({
   setActive: (s: Section) => void;
 }) {
   const t = useTranslations("navigation");
-
   return (
     <div className="hidden md:grid grid-cols-5 h-full">
       {/* LEFT */}
@@ -23,7 +21,6 @@ export default function DesktopLayout({
         <div className="px-6 pt-6">
           <ProfileSection compact />
         </div>
-
         <nav className="mt-4 px-6 space-y-2">
           {(["skills", "experience", "projects"] as Section[]).map((key) => (
             <button
@@ -40,9 +37,8 @@ export default function DesktopLayout({
           ))}
         </nav>
       </aside>
-
       {/* RIGHT */}
-      <section className="col-span-3 flex items-center justify-center px-10">
+      <section className="col-span-3 overflow-y-auto px-10 py-10">
         {active === "skills" && <SkillsSection />}
         {active === "experience" && <ExperienceSection />}
         {active === "projects" && <ProjectsSection />}

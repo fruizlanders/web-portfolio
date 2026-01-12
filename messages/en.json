@@ -33,23 +33,31 @@
     "download": "Download Resume (PDF)"
   },
   "projects": {
-    "title": "Projects",
-    "cloud": {
-      "title": "Scalable Cloud Architectures",
-      "description": "Design and implementation of secure and scalable cloud infrastructures."
+    "title": "Selected Projects",
+    "sentiment": {
+      "title": "AI-Powered Sentiment Analysis",
+      "description": "Backend system for sentiment analysis using automated web scraping and AI processing."
     },
-    "saas": {
-      "title": "Modern SaaS Platform",
-      "description": "Full-stack application with auth, payments, and continuous deployment."
+    "cloudInspector": {
+      "title": "Cloud Service Inspector",
+      "description": "Backend tool for analyzing and auditing cloud services across AWS and Azure environments."
     },
-    "automation": {
-      "title": "Automation & CI/CD",
-      "description": "Automated pipelines for testing, build, and deployment."
+    "etl": {
+      "title": "API ETL Transformer",
+      "description": "ETL pipeline to automate content generation using Gemini API and Supabase Edge Functions."
+    },
+    "enviemos": {
+      "title": "Enviemos Mobile App",
+      "description": "Mobile application connecting users within a credit card payment network."
+    },
+    "scraper": {
+      "title": "Bank Movement Scraper",
+      "description": "Legal scraping service for extracting banking movements used in payment platforms."
     }
   },
   "navigation": {
-    "skills": "Habilidades",
-    "experience": "Experiencia",
-    "projects": "Proyectos"
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects"
   }
 }

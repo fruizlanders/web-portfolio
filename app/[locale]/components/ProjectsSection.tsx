@@ -1,64 +1,49 @@
-import { useTranslations } from "next-intl";
+"use client";
 
-const projects = [
-  {
-    key: "cloud",
-    tech: ["Azure", "AWS", "Terraform"],
-    link: "https://github.com/fruizlanders",
-  },
-  {
-    key: "saas",
-    tech: ["Next.js", "Supabase", "Stripe"],
-    link: "https://github.com/fruizlanders",
-  },
-  {
-    key: "automation",
-    tech: ["Node.js", "CI/CD", "GitHub Actions"],
-    link: "https://github.com/fruizlanders",
-  },
-];
+import { useTranslations } from "next-intl";
+import { projects } from "./projects";
 
 export default function ProjectsSection() {
   const t = useTranslations("projects");
 
   return (
-    <section className="space-y-6">
+    <section className="section space-y-6">
       {/* TITLE */}
-      <h2 className="text-2xl font-semibold">{t("title")}</h2>
+      <h2 className="text-2xl font-semibold gradient-text">{t("title")}</h2>
 
-      {/* PROJECT LIST */}
+      {/* PROJECTS */}
       <div className="grid gap-4">
-        {projects.map((project) => (
+        {projects.map(({ key, tech, link }) => (
           <a
-            key={project.key}
-            href={project.link}
+            key={key}
+            href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group rounded-lg border border-neutral-800 p-4 hover:border-sky-400 transition"
+            className="group glass p-5 transition hover:border-sky-400"
           >
-            <div className="flex items-start justify-between">
-              <div>
-                <h3 className="font-medium group-hover:text-sky-400 transition">
-                  {t(`${project.key}.title`)}
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-1">
+                <h3 className="font-medium text-neutral-100 group-hover:text-sky-400 transition">
+                  {t(`${key}.title`)}
                 </h3>
-
-                <p className="text-sm text-neutral-400 mt-1">
-                  {t(`${project.key}.description`)}
+                <p className="text-sm text-neutral-400 leading-relaxed">
+                  {t(`${key}.description`)}
                 </p>
               </div>
 
-              <span className="text-sm text-neutral-500 group-hover:text-sky-400 transition">
+              <span className="text-neutral-500 group-hover:text-sky-400 transition">
                 ↗
               </span>
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-3">
-              {project.tech.map((tech) => (
+            {/* TECH */}
+            <div className="mt-4 flex flex-wrap gap-2">
+              {tech.map((item) => (
                 <span
-                  key={tech}
+                  key={item}
                   className="text-xs rounded-full border border-neutral-700 px-3 py-1 text-neutral-400"
                 >
-                  {tech}
+                  {item}
                 </span>
               ))}
             </div>

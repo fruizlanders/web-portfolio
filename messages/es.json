@@ -37,18 +37,26 @@
     "download": "Descargar CV (PDF)"
   },
   "projects": {
-    "title": "Proyectos",
-    "cloud": {
-      "title": "Arquitecturas Cloud Escalables",
-      "description": "Diseño e implementación de infraestructuras cloud seguras y escalables."
+    "title": "Proyectos Destacados",
+    "sentiment": {
+      "title": "Análisis de Sentimiento con IA",
+      "description": "Sistema backend para análisis de sentimiento mediante scraping automatizado y procesamiento con IA."
     },
-    "saas": {
-      "title": "Plataforma SaaS Moderna",
-      "description": "Aplicación full-stack con autenticación, pagos y despliegue continuo."
+    "cloudInspector": {
+      "title": "Inspector de Servicios Cloud",
+      "description": "Herramienta backend para análisis y auditoría de servicios en AWS y Azure."
     },
-    "automation": {
-      "title": "Automatización & CI/CD",
-      "description": "Pipelines automatizados para testing, build y despliegue."
+    "etl": {
+      "title": "Transformador ETL vía API",
+      "description": "Pipeline ETL para automatizar generación de contenido usando Gemini API y Edge Functions."
+    },
+    "enviemos": {
+      "title": "App Móvil Enviemos",
+      "description": "Aplicación móvil que conecta usuarios dentro de una red de pagos con tarjeta."
+    },
+    "scraper": {
+      "title": "Scraper de Movimientos Bancarios",
+      "description": "Servicio de scraping legal para extracción de movimientos bancarios en apps de pago."
     }
   },
   "navigation": {
